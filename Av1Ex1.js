@@ -1,6 +1,7 @@
 const prompt = require('prompt-sync')();
 
 uf = prompt("Digite a sigla do estado: ")
+uf = uf.toUpperCase()
 
 switch(uf){
     case "RJ":console.log("Carioca") 
