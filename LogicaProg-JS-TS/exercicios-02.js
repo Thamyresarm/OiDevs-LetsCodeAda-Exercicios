@@ -45,10 +45,8 @@ const umaString = "Hello Word"
 // Dado a string acima, retorne em uma nova const os valores invertidos. Exemplo: "droW olleH"
 umaStringVet = umaString.split("");
 umaStringVetInvertida = umaStringVet.reverse();
-let umaStringInvertida="";
-umaStringVetInvertida.forEach(element => {
-   umaStringInvertida += element;
-});
+let umaStringInvertida = umaStringVetInvertida.join("");
+
 console.log(umaStringInvertida);
 
 console.log(``)
@@ -73,7 +71,8 @@ console.log(`#6 - Exercício`)
 const array = [1, 2, 3, 1, 2, 4, 5, 5, 4, 10, 12, 10, 1, 13, 12, 14]
 // Dado o array acima:
 // Retorne um novo array que retire os resultados duplicados
-
+const NovoArray = [...new Set(array)];
+console.log(NovoArray);
 
 // Retorne a posição do primeiro número 2 
 console.log("Primeira Posição 2: " + array.indexOf(2));
@@ -82,10 +81,8 @@ console.log("Ultima Posição 2: " + array.lastIndexOf(2));
 // Crie uma variável que verfique se existe o número 14. Retorne true ou false
 console.log("Existe 14 ? " + array.includes(14));
 // Crie uma variável que retorne uma string do array com os valores separados por traço, exemplo: 1 - 2 - 3 - 1 - 2 - 4 - 5 - 5 - 4 - 10 - 12 - 10 - 1 - 13 - 12 - 14
-let novaString="";
-array.forEach(element => {
-   novaString += element + "-";
-});
+let novaString= array.join(" - ");
+
 console.log(novaString);
 
 console.log(``)
@@ -94,9 +91,7 @@ console.log(`#7 - Exercício`)
 const arr1 = ["Fev", "Mar", "Abr", "Mai", "Jun"]
 const arr2 = ["Jul", "Ago", "Set", "Out", "Nov"]
 // Concatene os arrays acima em um novo array
-let arr3 = [];
-arr3.push(...arr1);
-arr3.push(...arr2);
+let arr3 = arr1.concat(...arr2);
 // Insira na última posição do novo array a string "Dez"
 arr3.push("Dez");
 // Insira na primeira posição do novo array a string "Jan"
