@@ -1,0 +1,28 @@
+Para utilizar o prompt, instale a biblioteca do prompt:
+
+    npm i prompt --save
+
+Caso esteja utilizando também o TYPESCRIPT é necessário instalar as definições de tipos
+para o prompt:
+
+    npm i @types/prompt --save
+
+Com o prompt instalado, basta importar o modulo no arquivo em que deseja utilizar:
+
+    JavaScript:
+        const prompt = require('prompt')
+    
+    TypeScript:
+        import prompt from 'prompt'
+
+
+Crie uma função assincrona:
+
+async function main() {
+    //Na função 'get' basta passar como parametro um array com as informações que deseja coletar
+    const response = await prompt.get(['username', 'email']);
+    //Resposta: {username: 'Esdras', email: 'esdras@lets.com'}
+
+    console.log(response.username)
+    console.log(response.email)
+}

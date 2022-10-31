@@ -2,7 +2,6 @@ npm install -g typescript
 npm install -g ts-node
 
 npm init -y
-
 "start": "ts-node src/index",
 
 tsc --init
