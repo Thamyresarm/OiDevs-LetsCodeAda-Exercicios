@@ -1,13 +1,21 @@
 class Data {
-    private _data: Date;
+    private _dia: number;
+    private _mes: number;
+    private _ano: number;
+    private data: string;
 
-    constructor(data: Date){
-        this._data = data;
+    constructor(data: string){
+        this.data = data;
+
+        this.normalizar();
     }
 
-    get data(){
-        return this._data;
+    normalizar(){
+        const [dia, mes, ano] = this.data.split('/');
+        this._dia = Number(dia)
+        this._mes = Number(mes)
+        this._ano = Number(ano)
     }
 }
 
-const data1 = new Data(24-06-1992)
+const data1 = new Data("24/06/1992")

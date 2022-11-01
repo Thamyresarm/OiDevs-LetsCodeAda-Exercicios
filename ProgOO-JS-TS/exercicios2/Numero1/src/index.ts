@@ -35,18 +35,20 @@ class Avaliacao {
         this.trabalho = trabalho;
     } 
 
-    public mediaNotas() {
+    public mediaNotas(): number {
         const calcProvas = this.provas.reduce((previous, current) => previous + current * 2.5, 0);
         const calcTrabalho = this.trabalho * 2;
-        return (calcProvas+calcTrabalho) / 3;
+        return (calcProvas+calcTrabalho) / 7;
     }
 
-    public precisaProvaFinal(){
-            if(this.mediaNotas() >= 7){
+    public precisaProvaFinal(): number{
+        const media = this.mediaNotas();
+
+            if(media >= 7){
                 return 0;                
             }
             else{
-                return console.log("Precisa de prova final!");
+                return (7 - media)/0.3;
             }
     }
 }
