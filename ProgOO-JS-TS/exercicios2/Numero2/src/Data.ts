@@ -1,4 +1,4 @@
-class Data {
+export class Data {
     private _dia: number;
     private _mes: number;
     private _ano: number;
@@ -17,5 +17,3 @@ class Data {
         this._ano = Number(ano)
     }
 }
-
-const data1 = new Data("24/06/1992")
