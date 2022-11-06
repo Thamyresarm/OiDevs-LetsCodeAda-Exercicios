@@ -14,4 +14,5 @@ voo006.ocupa(5);
 voo006.ocupa(1);
 voo006.ocupa(200);
 console.log(voo006.assentos);
-//voo006.proximoLivre();
+voo006.proximoLivre();
+voo006.vagas()

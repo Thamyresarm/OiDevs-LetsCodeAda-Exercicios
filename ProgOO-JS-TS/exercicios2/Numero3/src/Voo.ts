@@ -24,13 +24,14 @@ export class Voo {
         return this.codigo;
     }
 
-    // public proximoLivre() {
-    //     const verificado = this._assentos.=== true;
-
-    //     if (verificado) {
-    //         return console.log(verificado);
-    //     }
-    // }
+    public proximoLivre() {
+        for (let i = 0; i < 100; i++) {
+            if(this._assentos[i + 1] === true){
+                console.log("Proximo assento livre: "+(i + 1))
+                break;
+            }
+        }
+    }
 
     public verifica(numeroAssento: number): boolean {
         const verificado = this._assentos[numeroAssento];
@@ -46,12 +47,18 @@ export class Voo {
         } else if(isDisponivel === false) {
             console.log('Poltrona já ocupada!');
         } else {
-            throw new Error('Poltrona inexistente!');
+            console.log('Poltrona inexistente!');
         }
     }
 
-    public vagas() {
-        //const verificado = this._assentos.reduce((previous, current) => );
+    public vagas(): void{
+        let count = 0;
+        for (let i = 0; i < 100; i++) {
+            if(this._assentos[i + 1] === true){
+                count++;                
+            }
+        }
+        console.log(count + " vagas disponíveis")
     }
 }
 

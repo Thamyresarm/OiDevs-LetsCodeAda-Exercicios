@@ -2,10 +2,10 @@ export class Data {
     private _dia: number = 1;
     private _mes: number = 1;
     private _ano: number = 1;
-    private data: string;
+   // private _data: string;
 
     constructor(data: string) {
-        this.data = data;
+       // this._data = data;
         this.normalizar(data);
     }
 
@@ -28,12 +28,30 @@ export class Data {
         return this._ano;
     }
 
+    get data(): string {
+        return this.dia + "/" + this.mes + "/" + this.ano;
+    }
+
     compara(data: Data): boolean{
         if(this.dia === data.dia && this.mes === data.mes && this.ano === data.ano){
             return true;
         }else {
             return false;
         }
+    }
+
+    difference(data: Data): number | undefined{
+        if(this.ano >= data._ano){            
+            return 0;
+        }else if(this.ano < data._ano  && this.mes < data.mes){
+            return data.ano - this.ano;
+        } else if(this.ano < data._ano && this.mes === data.mes && this.dia <= data.dia) {
+            return data.ano - this.ano;
+        } else if (this.ano < data._ano && this.mes === data.mes && this.dia > data.dia) {
+            return data.ano - this.ano - 1;
+        }else if (this.ano < data._ano && this.mes > data.mes) {
+            return data.ano - this.ano - 1;
+        }  
     }
     
     private validaDia(dia: number, mes: number): number {
@@ -75,11 +93,3 @@ export class Data {
         }
     }
 }
-
-
-// const data1 = new Data("24/06/1993")
-// const data2 = new Data("24/06/1992")
-// console.log(data1.dia)
-// console.log(data1.mes)
-// console.log(data1.ano)
-// console.log(data1.compara(data2))
