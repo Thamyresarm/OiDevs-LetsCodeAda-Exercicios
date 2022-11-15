@@ -1,0 +1,18 @@
+Aula 1:
+
+client-side e server-side:
+- https://www.gigasystems.com.br/artigo/60/client-side-e-server-side
+
+Introdução a plataforma node:
+- https://medium.com/thdesenvolvedores/node-js-o-que-%C3%A9-por-que-usar-e-primeiros-passos-1118f771b889
+- https://www.geeksforgeeks.org/nodejs/
+
+Instalando Node.js:
+- https://nodejs.org/en/
+- https://www.geeksforgeeks.org/installation-of-node-js-on-windows/
+- https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
+- https://github.com/coreybutler/nvm-windows (instalando outras versões)
+
+Explorando a documentação:
+- https://nodejs.org/dist/latest-v18.x/docs/api/
+

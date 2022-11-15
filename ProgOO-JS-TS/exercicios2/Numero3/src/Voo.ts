@@ -1,23 +1,40 @@
 import { Data } from "../../Numero2/src/Data";
 
 export class Voo {
-    private codigo: string;
-    private data: Data;
-    private horario: string;
+    private _codigo: string;
+    private _data: Data;
+    private _horario: string;
+    private _vagas: number = 100;
     private _assentos: {[i: number]: boolean } = {};
 
     constructor(codigo: string, data: Data, horario: string) {
-        this.codigo = codigo;
-        this.data = data
-        this.horario = horario;
+        this._codigo = codigo;
+        this._data = data
+        this._horario = horario;        
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < this._vagas; i++) {
             this._assentos[i + 1] = true;
         }
     }
 
+    get codigo(){
+        return this._codigo;
+    
+    }
+    get data(){
+        return this._data;
+    
+    }
+    get horario(){
+        return this._horario;
+    }
+
     get assentos() {
         return this._assentos;
+    }
+
+    set vagas(vagas: number ){
+        this._vagas = vagas;
     }
 
     public getVoo() {
@@ -25,7 +42,7 @@ export class Voo {
     }
 
     public proximoLivre() {
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < this._vagas; i++) {
             if(this._assentos[i + 1] === true){
                 console.log("Proximo assento livre: "+(i + 1))
                 break;
@@ -33,13 +50,25 @@ export class Voo {
         }
     }
 
-    public verifica(numeroAssento: number): boolean {
+    protected validaAssento(numeroAssento: number): boolean {
         const verificado = this._assentos[numeroAssento];
-        return verificado;
+        return verificado;        
+    }
+
+    public verifica(numeroAssento: number): void {
+        const isDisponivel = this.validaAssento(numeroAssento);
+
+        if (isDisponivel) {
+            console.log('True');
+        } else if(isDisponivel === false) {
+            console.log('False');
+        } else {
+            console.log('Poltrona inexistente!');
+        }
     }
 
     public ocupa(numeroAssento: number): void {
-        const isDisponivel = this.verifica(numeroAssento);
+        const isDisponivel = this.validaAssento(numeroAssento);
 
         if (isDisponivel) {
             this._assentos[numeroAssento] = false;
@@ -51,9 +80,9 @@ export class Voo {
         }
     }
 
-    public vagas(): void{
+    public vagasDisponiveis(): void{
         let count = 0;
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < this._vagas; i++) {
             if(this._assentos[i + 1] === true){
                 count++;                
             }
