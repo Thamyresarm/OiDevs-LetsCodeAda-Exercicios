@@ -4,4 +4,4 @@ function cpfFormat(cpf){
 	console.log(CPF.format(cpf));
 }
 
-export default {cpfFormat}
+export {cpfFormat}

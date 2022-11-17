@@ -6,4 +6,4 @@ function cpfGenerate(){
     return novoCpf;
 }
 
-export default {cpfGenerate}
+export {cpfGenerate}

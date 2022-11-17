@@ -1,9 +1,9 @@
-import cpfGenerate from "./cpfGenerate."
-import cpfFormat from "./cpfFormat"
-import validarCpf from "./validaCpf"
-import cpfStrip from "./cpfstrip"
+import {cpfGenerate} from "./cpfGenerate.js"
+import {cpfFormat} from "./cpfFormat.js"
+import {validarCpf} from "./validaCpf.js"
+import {cpfStrip} from "./cpfstrip.js"
 
-//validarCpf('676.754.677-10')
+// validarCpf('676.754.677-10')
 
 const novoCpf = cpfGenerate()
 validarCpf(novoCpf)

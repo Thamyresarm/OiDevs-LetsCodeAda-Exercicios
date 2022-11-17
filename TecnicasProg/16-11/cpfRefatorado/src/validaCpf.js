@@ -4,4 +4,4 @@ function validarCpf(cpf){
 	console.log(CPF.validate(cpf));
 }
 
-export default {validarCpf}
+export {validarCpf}
