@@ -1,0 +1,16 @@
+{
+  "name": "common",
+  "version": "0.0.1",
+  "description": "exemplo de utilizacao do modulo nativo de nodejs commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "teste"
+  },
+  "author": "OiDevs",
+  "license": "ISC",
+  "dependencies": {
+    "cpf-check": "^3.0.0"
+  },
+  "keywords": []
+}
