@@ -1,0 +1,7 @@
+1- iniciar
+
+    yarn init -y
+
+2- instalar packages
+
+    yarn add 

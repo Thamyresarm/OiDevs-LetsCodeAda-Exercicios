@@ -1,9 +1,9 @@
 import CPF from "cpf-check";
 
 function cpfGenerate(){
-	const novoCpf = CPF.generate();
+    const novoCpf = CPF.generate()
 	console.log(novoCpf);
-	return novoCpf;
+    return novoCpf;
 }
 
-export {cpfGenerate};
+export {cpfGenerate}

@@ -1,0 +1,9 @@
+1- instalar yarn
+
+    npm install yarn
+
+2- deletar pasta node_modules
+
+3- instalar os compoments do projeto com yarn
+    yarn install
+

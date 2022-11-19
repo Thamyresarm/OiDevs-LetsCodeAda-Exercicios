@@ -1,0 +1,5 @@
+------------------//------------------
+
+Eslint => padrão de código
+
+npm init @eslint/config

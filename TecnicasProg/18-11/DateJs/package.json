@@ -1,0 +1,18 @@
+{
+  "name": "aula-04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/be-ts-003-tecnicas-de-programacao-i/aula-04.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/be-ts-003-tecnicas-de-programacao-i/aula-04/issues"
+  },
+  "homepage": "https://gitlab.com/be-ts-003-tecnicas-de-programacao-i/aula-04#readme"
+}

@@ -1,21 +1,18 @@
 {
-  "name": "common",
+  "name": "yarn-project",
   "version": "0.0.1",
   "description": "exemplo de utilizacao do modulo nativo de nodejs commonjs",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
-    "lint": "npx eslint --fix --ext .js ./src",
     "test": "teste"
   },
   "author": "OiDevs",
   "license": "ISC",
   "dependencies": {
-    "cpf-check": "^3.0.0"
+    "cpf-check": "^3.0.0",
+    "yarn": "^1.22.19"
   },
-  "keywords": [],
-  "devDependencies": {
-    "eslint": "^8.28.0"
-  }
+  "keywords": []
 }

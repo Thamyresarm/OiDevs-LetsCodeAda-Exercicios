@@ -4,4 +4,4 @@ function cpfStrip(cpf){
 	console.log(CPF.strip(cpf));
 }
 
-export {cpfStrip};
+export {cpfStrip}
