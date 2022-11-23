@@ -1,0 +1,22 @@
+{
+  "name": "aula-05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "client": "node src/index.js",
+    "api": "node src/api/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/be-ts-003-tecnicas-de-programacao-i/aula-05.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/be-ts-003-tecnicas-de-programacao-i/aula-05/issues"
+  },
+  "homepage": "https://gitlab.com/be-ts-003-tecnicas-de-programacao-i/aula-05#readme"
+}

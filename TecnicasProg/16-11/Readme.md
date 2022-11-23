@@ -55,12 +55,7 @@ Modularização de código no back-end (Parte 2)
     - Executar npm --help para mostrar comandos disponiveis
     - Pesquisar sobre o `npm start`
     - Pesquisar sobre como atualizar o arquivo `package.json` para o padrao ES6 Modules
-    - Refatorar codigo para ES6 modules 
-
-- Quais são as alternativas ao uso do NPM (apresentando o Yarn);
-    - instalar yarn com NPM global https://yarnpkg.com/
-    - instalar https://www.npmjs.com/package/cpf-check com Yarn
-    - executar o script de start com yarn
+    - Refatorar codigo para ES6 modules     
 
 - Ampliar a qualidade do código com o uso de linters (ESLint / Prettier).
     - instalar https://eslint.org/ e dar um overview

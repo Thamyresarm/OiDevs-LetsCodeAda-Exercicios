@@ -7,3 +7,4 @@
 3- instalar os compoments do projeto com yarn
     yarn install
 
+ESLINT NÃO FUNCIONA COM COMANDO YARN

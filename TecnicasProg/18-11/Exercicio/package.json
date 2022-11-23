@@ -1,0 +1,22 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "description": "iniciando o eslint em um projeto yarn",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "lint": "npx eslint --fix --ext .js ./src",
+    "test": "teste"
+  },  
+  "dependencies": {
+    "date-fns": "^2.29.3",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}
