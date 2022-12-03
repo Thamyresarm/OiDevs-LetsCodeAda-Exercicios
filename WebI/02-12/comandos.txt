@@ -1,0 +1,28 @@
+npm init -y
+
+npm install express
+
+npm install typescript  --save-dev
+
+npx tsc --init
+
+npm i --save-dev @types/express
+
+npm install @types/node --save-dev
+
+Transpilar o TS para JS
+
+npx tsc = inserir no package.json em scripts 
+
+"build": "tsc",
+
+Rodar o arquivo JS gerado
+
+node ./dist/server.js = inserir no package.json em scripts
+
+"dev": "node ./dist/server.js",
+
+rodar sem ficar finalizando:
+
+inserir no package.json em scripts
+"dev": "ts-node-dev ./src/server.ts",

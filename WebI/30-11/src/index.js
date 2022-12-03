@@ -23,16 +23,16 @@ server.post('/', (request, response) => {
     users.push(user);
     console.log(request.body);
 
-    response.send(users);
+    return response.send(user);
     // response.send('Hello World from post!');
 });
 
 server.put('/:id', (request, response) => {
     const {id} = request.params;
-    const userIndex = users.findIndex(x => x.id === Number(id));
+    const userIndex = users.findIndex((x) => x.id === Number(id));
 
     if(userIndex ===  -1){
-        //nao encontrou
+        //retornar que nao encontrou
        return response.send('Not Found!');
         
      }
