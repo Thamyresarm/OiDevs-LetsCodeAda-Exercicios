@@ -6,6 +6,7 @@ let users: any[] = [];
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
 
+
 userRotes.get('/', (request, response) => {
   return response.send(users);
 });
@@ -64,9 +65,17 @@ userRotes.put('/:id', (request, response) => {
   return response.send(users[userIndex]);
 });
 
+// function findUser(id: number){
+//   for(let i=0; i < users.length; i++){
+//     if(users[i].id === id) return users[i];
+//   }
+
+//   return null;
+// }
+
 userRotes.delete('/:id', (request, response) => {
   const { id } = request.params;
-  users = users.filter((x) => x.id !== Number(id));
+  users = users.filter((x) => x.id !== Number(id));  
   return response.send('Deleted!');
 });
 
