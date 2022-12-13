@@ -1,0 +1,4 @@
+https://www.prisma.io/docs/getting-started/quickstart
+
+npm install uuid (instalar lib de gerador de id)
+npm i @types/uuid
