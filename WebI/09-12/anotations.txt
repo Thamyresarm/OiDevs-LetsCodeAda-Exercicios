@@ -1,4 +1,12 @@
 https://www.prisma.io/docs/getting-started/quickstart
 
+npm install prisma --save-dev
+npm install @prisma/client
+npx prisma init
+npx prisma migrate dev --name init
+
+
 npm install uuid (instalar lib de gerador de id)
 npm i @types/uuid
+
+github professor: https://github.com/DaviGn/Turma905/

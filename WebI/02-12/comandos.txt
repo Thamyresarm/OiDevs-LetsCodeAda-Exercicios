@@ -10,6 +10,9 @@ npm i --save-dev @types/express
 
 npm install @types/node --save-dev
 
+ir no tsconfig.json descomentar o Outdir para escolher 
+uma pasta padrão ex.: /dist
+
 - Transpilar o TS para JS
 
 npx tsc = inserir no package.json em scripts 

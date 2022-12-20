@@ -1,1 +1,1 @@
-continuação da aula 09/12 implementando os cities(meu cities esta completo na aula 07-12, porém nao está com prisma)
+npm i express-validator
