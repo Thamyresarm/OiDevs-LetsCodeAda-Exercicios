@@ -47,14 +47,15 @@ export async function createShopping(request: Request<{}, {}, ShoppingDto>, resp
 
         const updateStock = new UpdateProductUseCase();
 
-        const productUpdated: Omit<ProductEntity, 'id'> = {            
+        const productUpdated: ProductEntity = {     
+            id: product.id,       
             name: product.name,
             description: product.description,
             price: product.price,
             quantity: (product.quantity - shoppingRequest.items[i].quantity)
         }
 
-        await updateStock.handle({shoppingRequest.items[i].id, ...productUpdated});
+        await updateStock.handle({...productUpdated});
     }
 
     const totalValue = items.reduce((acc, cur) => acc + (cur.quantity * cur.unitValue), 0);
