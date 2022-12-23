@@ -6,11 +6,7 @@ export class ListProductsUseCase {
   constructor() {}
 
   async handle(): Promise<Product[]> {
-    const products = await prisma.product.findMany({
-      // include: {
-      //   city: true,
-      // },
-    });
+    const products = await prisma.product.findMany();
     return products;
   }
 }

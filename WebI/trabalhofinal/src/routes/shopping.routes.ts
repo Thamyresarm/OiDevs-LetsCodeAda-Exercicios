@@ -1,29 +1,19 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { 
+    createShopping, 
+    getShoppingById, 
+    getShoppingByUser, 
+    updateStatusShopping 
+} from "../controllers/shopping";
+import { validationsMiddleware } from "../middleware/validations";
+import { shoppingIdValidation, shoppingValidations } from "../validatiors/shopping";
+import { userIdValidation } from "../validatiors/user";
 
 const shoppingRoutes = Router();
 
-shoppingRoutes.get('/:id', (req: Request, res: Response) => {
-    res.json({
-        message: 'compra rota getbyid'
-    })
-});
-
-shoppingRoutes.get('/user/:id', (req: Request, res: Response) => {
-    res.json({
-        message: 'compras de um usuario rota getbyuserid'
-    })
-});
-
-shoppingRoutes.post('/', (req: Request, res: Response) => {
-    res.json({
-        message: 'compra rota post'
-    })
-});
-
-shoppingRoutes.delete('/', (req: Request, res: Response) => {
-    res.json({
-        message: 'compra rota delete(cancelar)'
-    })
-});
+shoppingRoutes.get('/:id', shoppingIdValidation, validationsMiddleware, getShoppingById);
+shoppingRoutes.get('/user/:id', userIdValidation, validationsMiddleware, getShoppingByUser);
+shoppingRoutes.post('/', shoppingValidations, validationsMiddleware, createShopping);
+shoppingRoutes.put('/cancel/:id', shoppingIdValidation, validationsMiddleware, updateStatusShopping);
 
 export default shoppingRoutes;

@@ -1,6 +1,7 @@
-export interface Items{
+export interface ItemsEntity{
     id: string
-    unitValue: number
     idProduct: string
     quantity: number
+    unitValue: number
+    idShopping: string
 }

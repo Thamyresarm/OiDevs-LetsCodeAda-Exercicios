@@ -41,6 +41,7 @@ model Items {
 model Shopping {
     id String @id
     payment String
+    status String
     totalValue Decimal
     Items Items[]
     user User @relation(fields: [idUser], references: [id])  

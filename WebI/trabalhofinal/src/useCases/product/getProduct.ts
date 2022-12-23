@@ -12,10 +12,6 @@ async handle(id: string): Promise<Product | null>{
           equals: id
         }
       },
-    
-      // include: {
-      //   city: true
-      // }
     });
     
     return product;

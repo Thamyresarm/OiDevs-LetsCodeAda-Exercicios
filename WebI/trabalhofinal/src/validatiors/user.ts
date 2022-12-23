@@ -11,7 +11,7 @@ export const userValidations = [
 ];
 
 export const userIdValidation = [
-  param('id').notEmpty().withMessage('Id is required!'),
+  param('id').notEmpty().withMessage('Id User is required!'),
 ];
 
 export const editUserValidations = [...userIdValidation, ...userValidations];

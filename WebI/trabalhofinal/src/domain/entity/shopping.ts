@@ -1,7 +1,7 @@
-export interface Shopping{
+export interface ShoppingEntity{
     id: string
     payment: string
-    totalValue: Number
-    idItem: string
+    status: string
+    totalValue: number
     idUser: string
 }
