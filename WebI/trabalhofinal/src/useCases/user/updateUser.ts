@@ -1,14 +1,24 @@
-import { PrismaClient, User } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { UserEntity } from "../../domain/entity/user";
-
+import { IPresenter, NotFoundPresenter, SuccessPresenter } from "../../presenters";
+import { GetUserUseCase } from "./getUser";
 
 const prisma = new PrismaClient();
 
 export class UpdateUserUseCase {
     constructor(){}
 
-    async handle({id, name, email, password}: UserEntity): Promise<User>{
-        
+    async handle({id, name, email, password}: UserEntity): Promise<IPresenter>{
+
+      const useCaseGet = new GetUserUseCase();
+      const user = await useCaseGet.handle(id);
+
+      if (!user) {
+        return new NotFoundPresenter({
+          message: 'User not found!',
+        });
+      }
+
         const updatedUser = await prisma.user.update({
             data: {
               name,
@@ -19,6 +29,6 @@ export class UpdateUserUseCase {
               id,
             },
           });
-          return updatedUser;
+          return new SuccessPresenter(updatedUser);
     }        
 }

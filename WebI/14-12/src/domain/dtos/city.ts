@@ -1,5 +1,5 @@
 export interface CityDto {
-     id: number;
+    id: number;
     name: string;
     UF: string
   }

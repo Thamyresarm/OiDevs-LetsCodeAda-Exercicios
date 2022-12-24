@@ -1,17 +1,18 @@
 import { Router } from 'express';
 import { validationsMiddleware } from '../middlewares/validations';
-import { 
-  createUser, 
-  deleteUser, 
-  getUser, 
-  listUsers, 
-  updateUser
-} from '../controllers/user';
-import { 
-  editUserValidations, 
-  userIdValidation, 
-  userValidations 
-} from '../validators/user';
+import {
+  listUsers,
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} from '@controllers/user';
+
+import {
+  userValidations,
+  editUserValidations,
+  userIdValidation,
+} from '@validators/user';
 
 const userRoutes = Router();
 

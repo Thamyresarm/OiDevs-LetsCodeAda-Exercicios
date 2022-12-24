@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { UserEntity } from '../domain/entity/user';
+import { processResult } from '../presenters';
 import { CreateUserUseCase } from '../useCases/user/createUser';
 import { DeleteUserUseCase } from '../useCases/user/deleteUser';
 import { GetUserUseCase } from '../useCases/user/getUser';
@@ -10,9 +11,9 @@ import { UpdateUserUseCase } from '../useCases/user/updateUser';
 export async function listUsers(request: Request, response: Response) {
 
   const useCase = new ListUsersUseCase();
-  const users = await useCase.handle();
+  const result = await useCase.handle();
 
-  return response.json(users);
+  return processResult(response, result);
 }
 
 interface GetParams {
@@ -24,15 +25,9 @@ export async function getUser(request: Request<GetParams>, response: Response) {
   const { id } = request.params
 
   const useCase = new GetUserUseCase();
-  const user = await useCase.handle(id);
+  const result = await useCase.handle(id);
 
-  if (!user) {
-    return response.status(404).json({
-      message: 'User not found!',
-    });
-  }
-
-  return response.send(user);
+  return processResult(response, result);
 }
 
 export async function createUser(request: Request<{}, {}, UserEntity>, response: Response) {
@@ -40,9 +35,9 @@ export async function createUser(request: Request<{}, {}, UserEntity>, response:
   const user = request.body;
 
   const useCase = new CreateUserUseCase();
-  const createdUser = await useCase.handle(user);
+  const result = await useCase.handle(user);
 
-  return response.json(createdUser);
+  return processResult(response, result);
 }
 
 export async function updateUser(
@@ -50,41 +45,19 @@ export async function updateUser(
   response: Response) {
 
   const { id } = request.params;
-
-  const useCaseGet = new GetUserUseCase();
-  const user = await useCaseGet.handle(id);
-
   const userData = request.body
 
-  if (!user) {
-    return response.status(404).json({
-      message: 'User not found!',
-    });
-  }
-
   const useCase = new UpdateUserUseCase();
-  const updatedUser = useCase.handle({ id, ...userData })
+  const result = await useCase.handle({ id, ...userData })
 
-  return response.json(updatedUser);
+  return processResult(response, result);
 }
 
 export async function deleteUser(request: Request<{ id: string }>, response: Response) {
 
   const { id } = request.params;
-
-  const useCaseGet = new GetUserUseCase();
-  const userExists = await useCaseGet.handle(id);
-
-  if (!userExists) {
-    return response.status(404).json({
-      message: 'User not found!',
-    });
-  }
-
   const useCase = new DeleteUserUseCase();
-  await useCase.handle(id);
+  const result = await useCase.handle(id);
 
-  return response.json({
-    message: 'User deleted succeeded!',
-  });
+  return processResult(response, result);
 }

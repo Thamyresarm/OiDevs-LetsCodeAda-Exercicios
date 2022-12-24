@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { ProductEntity } from "../domain/entity/product";
+import { processResult } from "../presenters";
 import { CreateProductUseCase } from "../useCases/product/createProduct";
 import { DeleteProductUseCase } from "../useCases/product/deleteProduct";
 import { GetProductUseCase } from "../useCases/product/getProduct";
@@ -9,9 +10,9 @@ import { UpdateProductUseCase } from "../useCases/product/updateProduct";
 export async function listProducts(req: Request, res: Response) {
 
     const useCase = new ListProductsUseCase();
-    const products = await useCase.handle();
+    const result = await useCase.handle();
 
-    return res.json(products);
+    return processResult(res, result);
 };
 
 interface GetParams {
@@ -23,15 +24,9 @@ export async function getProduct(req: Request<GetParams>, res: Response) {
     const { id } = req.params
 
     const useCase = new GetProductUseCase();
-    const product = await useCase.handle(id);
+    const result = await useCase.handle(id);
 
-    if (!product) {
-        return res.status(404).json({
-            message: 'Product not found!',
-        });
-    }
-
-    return res.send(product);
+    return processResult(res, result);
 };
 
 export async function createProduct(req: Request<{}, {}, ProductEntity>, res: Response) {
@@ -39,50 +34,27 @@ export async function createProduct(req: Request<{}, {}, ProductEntity>, res: Re
     const product = req.body
 
     const useCase = new CreateProductUseCase();
-    const createdProduct = await useCase.handle(product);
+    const result = await useCase.handle(product);
 
-    return res.json(createdProduct);
+    return processResult(res, result);
 };
 
 export async function updateProduct(req: Request<{id: string}, {}, Omit<ProductEntity, 'id'>>, res: Response) {
 
     const { id } = req.params
-
-    const useCaseGet = new GetProductUseCase();
-    const product = await useCaseGet.handle(id);
-
-    if (!product) {
-        return res.status(404).json({
-            message: 'Product not found!',
-        });
-    }
-
     const productData = req.body
 
     const useCase = new UpdateProductUseCase();
-    const updatedProduct = useCase.handle({ id, ...productData });
+    const result = await useCase.handle({ id, ...productData });
 
-    return res.json(updatedProduct);
+    return processResult(res, result);
 };
-
 
 export async function deleteProduct(req: Request<{id: string}>, res: Response) {
 
     const { id } = req.params;
-
-    const useCaseGet = new GetProductUseCase();
-    const productExists = await useCaseGet.handle(id);
-
-    if (!productExists) {
-        return res.status(404).json({
-            message: 'Product not found!',
-        });
-    }
-
     const useCase = new DeleteProductUseCase();
-    await useCase.handle(id);
+    const result = await useCase.handle(id);
 
-    return res.json({
-        message: 'Product deleted succeeded!',
-    });
+    return processResult(res, result);
 };

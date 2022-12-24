@@ -1,9 +1,13 @@
-import { PrismaClient, Shopping } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { toShoppingResponse } from "../../maps/shopping";
+import { IPresenter, NotFoundPresenter, SuccessPresenter } from "../../presenters";
 
 const prisma = new PrismaClient();
 
 export class GetShoppingById{
-    async handle(id: string): Promise<Shopping | null>{
+    constructor(){}
+
+    async handle(id: string): Promise<IPresenter>{
         const shopping = await prisma.shopping.findFirst({
             where: {
                 id: {
@@ -16,6 +20,14 @@ export class GetShoppingById{
             }
             
         });
-        return shopping;
+
+        
+    if (!shopping) {
+        return new NotFoundPresenter({
+            message: 'Shopping not found!',
+        });
+    }
+    const result = toShoppingResponse(shopping);
+    return new SuccessPresenter(result);
     }
 }
