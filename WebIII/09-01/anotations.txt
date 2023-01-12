@@ -1,0 +1,8 @@
+instalando express
+npm i express-generator
+
+Criar um novo esquleto de projeto express 
+npx express-generator
+
+instalando as dependencias
+npm i
