@@ -1,0 +1,6 @@
+- Faça um git clone do repositório
+- no terminal navegue até a o diretorio WebIII/projetoFinal/backEnd
+    - com o terminal apontado para esta pasta digite: npm start para subir a API
+- no terminal retorne uma pasta e navegue ate o diretório WebIII/projetoFinal/frontEnd
+    - com o terminal apontado para esta pasta digite: npm start para subir a aplicação
+- abra o navegador e acesse a url: http://localhost:8080 para acessar a aplicação
