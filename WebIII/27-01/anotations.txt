@@ -1,0 +1,4 @@
+Mongoose são dados não relacionais
+
+instalar mongoose
+npm i mongoose
