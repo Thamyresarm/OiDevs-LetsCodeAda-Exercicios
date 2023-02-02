@@ -1,4 +1,23 @@
-npm init
-npm i jest
-npm i jest @types/jest -D
-npx jest --init
+Start do projeto:
+
+    yarn init -y
+    npm init -y
+
+Instalação de dependencias
+    
+    yarn add jest @types/jest -D
+    npm i jest @types/jest -D
+
+Iniciar Jest
+
+    yarn jest --init 
+    npx jest --init 
+
+jest.config.ts
+
+    export default {
+        clearMocks: true,
+        roots: ['<rootDir>/tests'],
+        collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
+        coverageProvider: "v8",
+    };
