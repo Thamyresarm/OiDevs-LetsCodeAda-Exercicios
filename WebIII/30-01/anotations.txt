@@ -1,0 +1,11 @@
+Docker
+
+criei um docker compose com as informações de imagem do docker
+
+instalou-se o sequelize:
+
+npm i sequelize
+
+intalou-se o bd de escolha:
+
+npm install --save pg pg-hstore # Postgres

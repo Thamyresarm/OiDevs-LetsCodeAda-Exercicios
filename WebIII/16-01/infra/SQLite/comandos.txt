@@ -8,7 +8,7 @@ Passos SQLITE
 
 CREATE TABLE customers (   id TEXT UNIQUE NOT NULL,   name TEXT NOT NULL,   email TEXT NOT NULL UNIQUE PRIMARY KEY,   birthday TEXT NOT NULL,   cpf INTEGER NOT NULL,   typeAccount TEXT NOT NULL );
 
-INSERT INTO customers (id, name, email, birthday, cpf, typeAccount) VALUES('ABC123', 'Leonardo Souza', 'leonardo.souza@letscode.com', '08/10/1982', '30356278490', 'PF');
+INSERT INTO customers (id, name, email, birthday, cpf, typeAccount) VALUES('ABC123', 'Thamyres Magalhães', 'thamyres.magalhaes@letscode.com', '24/06/1992', '30356278490', 'PF');
 
 SELECT * FROM customers;
 

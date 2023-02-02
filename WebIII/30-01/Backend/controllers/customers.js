@@ -1,8 +1,8 @@
-const CarModel = require("../model/car");
+const CustomerModel = require("../model/customer");
 
 exports.getAll = (req, res) => {
 
-    CarModel
+    CustomerModel
         .findAll()
         .then((data) => res.status(200).json(data))
         .catch((err) => res.status(500).json({ err }));
@@ -10,17 +10,18 @@ exports.getAll = (req, res) => {
 
 exports.getOne = (req, res) => {
 
-    CarModel
-        .findOne({ where: { placa: req.params.placa } })
+    CustomerModel
+        .findOne({ where: { id: req.params.id } })
         .then((data) => res.status(200).send(data))
-        .catch((err) => res.status(404).send({ errMsg: "car not found" }))
+        .catch((err) => res.status(404).send({ errMsg: "customer not found" }))
 };
 
 exports.createOne = (req, res) => {
 
-    const data = {...req.body };
+    const { ulid } = require("ulid");
+    const data = { id: ulid(), ...req.body };
 
-    CarModel
+    CustomerModel
         .create(data)
         .then(() => res.status(201).json(data))
         .catch((err) => res.status(500).json({ err }));
@@ -28,10 +29,10 @@ exports.createOne = (req, res) => {
 
 exports.updateOne = (req, res) => {
 
-    CarModel
+    CustomerModel
         .update({ ...req.body },
             { 
-                where: { placa: req.params.placa }
+                where: { id: req.params.id }
             }
         )
         .then((data) => res.status(201).json(data))
@@ -40,8 +41,8 @@ exports.updateOne = (req, res) => {
 
 exports.deleteOne = (req, res) => {
 
-    CarModel
-        .destroy({ where: { placa: req.params.placa }})
+    CustomerModel
+        .destroy({ where: { id: req.params.id }})
         .then((data) => res.status(204).json(data))
         .catch((err) => res.status(500).json({ err }));
 };

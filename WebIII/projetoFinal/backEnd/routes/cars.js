@@ -1,18 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-//const {getAll, createOne, getOne, updateOne, deleteOne}= require("../controllers/cars");
+const {getAll, createOne, getOne, updateOne, deleteOne}= require("../controllers/cars");
 
-router.get('/', (req,res)=>{
-    res.send("Teste!!");
-});
+router.get('/', getAll);
 
-/* router.post('/', createOne);
+ router.post('/', createOne);
 
-router.get('/:id', getOne);
+router.get('/:placa', getOne);
 
-router.put('/:id', updateOne);
+router.put('/:placa', updateOne);
+router.patch('/:placa', updateOne);
 
-router.delete('/:id', deleteOne);
- */
+router.delete('/:placa', deleteOne);
+ 
 module.exports = router;
