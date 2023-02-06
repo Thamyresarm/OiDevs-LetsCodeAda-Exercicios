@@ -4,6 +4,9 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+const cors = require("cors");
+app.use(cors());
+
 const cars = require("../routes/cars");
 app.use('/cars', cars);
 

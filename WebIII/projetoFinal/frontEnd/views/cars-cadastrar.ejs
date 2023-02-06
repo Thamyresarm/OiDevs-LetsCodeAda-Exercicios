@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Carros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Novo Cadastro</h1>
+    <form>
+      <div class="mb-3">
+        <label for="placa" class="form-label">Placa</label>
+        <input type="text" class="form-control" id="placa" name="placa">
+      </div>
+      <div class="mb-3">
+        <label for="marca" class="form-label">Marca</label>
+        <input type="marca" class="form-control" id="marca" name="marca">
+      </div>
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <input type="modelo" class="form-control" id="modelo" name="modelo">
+      </div>
+      <div class="mb-3">
+        <label for="ano_fab" class="form-label">Ano Fabricação</label>
+        <input type="ano_fab" class="form-control" id="ano_fab" name="ano_fab">
+      </div>
+      <div class="mb-3">
+        <label for="ano_modelo" class="form-label">Ano Modelo</label>
+        <input type="ano_modelo" class="form-control" id="ano_modelo" name="ano_modelo">
+      </div>
+      <div class="mb-3">
+        <label for="cor" class="form-label">Cor</label>
+        <input type="cor" class="form-control" id="cor" name="cor">
+      </div>
+
+      <button id="buttonNew" type="button" class="btn btn-success">Salvar</button>
+      <a href="http://localhost:3000/" type="button" class="btn btn-primary">Voltar</a>
+    </form>
+  </div>
+  <script src="../javascripts/cadastrar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
