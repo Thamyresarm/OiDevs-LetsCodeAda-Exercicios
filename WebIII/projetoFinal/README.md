@@ -44,19 +44,19 @@ Repositório com o trabalho de final de módulo do curso OI DEVS em parceria com
 
 O projeto se inica com a seguinte tela: 
 
-
+![image](https://user-images.githubusercontent.com/24790794/216857005-cc5075cd-afeb-4ecb-a770-fcadb305c98d.png)
 
 No botão 'Novo Carro' abre a tela de cadastro para um novo registro:
 
-
+![image](https://user-images.githubusercontent.com/24790794/216857022-a6c5166f-03d5-48b7-97d8-41cde00b8393.png)
 
 No botão 'Editar Carro' abre a tela de edição para alterar um registro. Ao digitar a placa do veículo e clicar no botão 'Buscar', todos os outros campos são automaticamente preenchidos: 
 
-
+![image](https://user-images.githubusercontent.com/24790794/216857029-f2443544-d00a-4caf-bb79-dcfe410df351.png)
 
 No botão 'Exluir Carro' abre a tela de exclusão de um novo registro. Assim como a tela anterior, ao digitar a placa do veículo e clicar no botão 'Buscar', todos os outros campos são automaticamente preenchidos:
 
-
+![image](https://user-images.githubusercontent.com/24790794/216857043-4632b316-0ea0-4806-90f5-6f9cfb8abffb.png)
 
 Todas as telas tem a opção de retornar para a tela principal, clicando no botão 'Voltar'.
 
