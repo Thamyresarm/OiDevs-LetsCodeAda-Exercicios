@@ -1,0 +1,2 @@
+npm i jest @types/jest
+npx jest --init
