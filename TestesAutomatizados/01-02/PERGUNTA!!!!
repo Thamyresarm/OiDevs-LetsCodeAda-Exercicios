@@ -1,1 +1,3 @@
 COMO GEROU O ARQUIVO jest.config.ts ?????
+
+npx jest --init 
